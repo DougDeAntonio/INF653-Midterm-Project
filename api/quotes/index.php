@@ -9,7 +9,6 @@
         exit();
     }
 
-    // Route to the appropriate file based on HTTP method
     switch($method) {
         case 'GET':
             if(isset($_GET['id'])) {
@@ -28,7 +27,6 @@
             require 'delete.php';
             break;
         default:
-            // Invalid request method
             header("HTTP/1.1 405 Method Not Allowed");
             echo json_encode(array('message' => 'Method Not Allowed'));
             break;
